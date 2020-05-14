@@ -11,11 +11,13 @@
                  active-text-color="#409EEF" :default-active="activePath">
                     <!--:index="item.id+''"这个是打开一级权限防止重复  必须为字符串-->
                     <el-submenu :index="item.id+''" v-for="item in menulist" :key="item.id">
+                       <!-- 一级菜单 -->
                         <template slot="title">
                             <i :class="iconslist[item.id]"></i>
                             <span>{{item.authName}}</span>
-                            </template>
+                        </template>
                             <!-- 开启路由模式 需要index -->
+                            <!-- 二级菜单 -->
                         <el-menu-item  :index="'/'+subitem.path" 
                         v-for="subitem in item.children" :key="subitem.id" @click="saveNavState('/'+subitem.path)">
                             <template slot="title"><i class="el-icon-menu"></i>
