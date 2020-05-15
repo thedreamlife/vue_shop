@@ -51,9 +51,11 @@ export default {
             this.$refs.validateForm.resetFields();
       },
       login(){
+        //   登录前的预验证
           this.$refs.validateForm.validate( async valid=>{
               if(!valid) return;
             //  解构赋值 将data命名为res
+            // 如果验证通过向后端发起请求
               const res = await http.post('/login',this.loginForm)
             //   console.log(data);
               if(res.data.meta.status!==200) 
