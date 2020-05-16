@@ -25,7 +25,7 @@
                 <el-tag type="success" size="mini" v-else-if="scope.row.cat_level === 1">二级</el-tag>
                 <el-tag type="warning" size="mini" v-else>三级</el-tag>
             </template>
-            <template slot="opt" slot-scope="scope">
+            <template slot="opt">
                 <el-button type="primary" size="mini">编辑</el-button>
                 <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
             </template>
@@ -125,7 +125,7 @@ export default {
         parentCateList:[],
         // 指定级联选择器的配置对象
         cascaderProps:{
-            expandTrigger: 'hover',
+            expandTrigger: "hover",
             value:'cat_id',
             label:'cat_name',
             children:'children'
