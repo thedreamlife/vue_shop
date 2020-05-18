@@ -222,6 +222,7 @@ export default {
                 if(!valid){ return this.$message.error('请填写必要 的表单')
                 }
                const form =  _.cloneDeep(this.addForm)
+            //    数组转换成字符串
                form.goods_cat = form.goods_cat.join(',')
             //    处理动态参数
             this.manyTableData.forEach(item=>{
