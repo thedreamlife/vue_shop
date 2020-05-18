@@ -18,3 +18,7 @@ body,
 .ql-editor {
     min-height: 300px;
 }
+
+.el-row {
+    margin-bottom: 15px;
+}

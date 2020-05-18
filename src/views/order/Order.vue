@@ -6,15 +6,12 @@
             <el-breadcrumb-item>订单列表</el-breadcrumb-item>
       </el-breadcrumb>
       <el-card>
-          <el-row>
-              <el-col :span="8">
-                  <el-input placeholder="请输入内容"  clearable  >
-                    <el-button  icon="el-icon-search" slot="append" ></el-button>
+          <el-row >
+              <el-col :span="8" >
+                  <el-input placeholder="请输入内容"  clearable v-model="queryInfo.query" @clear="getOrderList" >
+                    <el-button  icon="el-icon-search" slot="append" @click="getOrderList"></el-button>
                 </el-input>
               </el-col>
-               <el-col :span="4">
-                    <el-button type="primary" @click="$router.push('/goods/add')" >添加商品</el-button>
-                </el-col>
           </el-row>
             <!-- 订单列表 -->
             <el-table :data="orderList" border stripe>
@@ -33,7 +30,7 @@
                     </template>
                 </el-table-column>
                 <el-table-column label="操作" width="180px">
-                    <template slot-scope="scope">
+                    <template >
                         <el-button type="primary" icon="el-icon-edit" size="mini" @click="showBox"></el-button>
                         <el-button type="success" icon="el-icon-location" size="mini" @click="showProgress" ></el-button>
                     </template>
