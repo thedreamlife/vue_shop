@@ -55,8 +55,6 @@
                     <el-button type="warning" icon="el-icon-setting" size="mini" @click="showSetRightDialog(scope.row)">分配权限</el-button>
                 </template>
             </el-table-column>
-            
-
         </el-table> 
     </el-card>
     <!-- 打开分配权限的对话框 -->

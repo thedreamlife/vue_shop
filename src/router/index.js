@@ -8,9 +8,13 @@ import Rights from '../views/power/Rights.vue'
 import Role from '../views/power/Role.vue'
 import Cate from '../views/goods/Cate.vue'
 import Params from '../views/goods/Params.vue'
+import GoodsList from '../views/goods/List.vue'
+import Add from '../views/goods/Add.vue'
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+
+    {
         path: '/',
         redirect: '/login'
     },
@@ -47,11 +51,18 @@ const routes = [{
             {
                 path: '/params',
                 component: Params
+            },
+            {
+                path: '/goods',
+                component: GoodsList
+            },
+            {
+                path: '/goods/add',
+                component: Add
             }
 
         ]
     }
-
 ]
 
 const router = new VueRouter({
